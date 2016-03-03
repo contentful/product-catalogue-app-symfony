@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="wrapper">
+        <div id="container">
+            <h1>{{ category.getTitle() }}</h1>
+            <p>{{ category.getCategoryDescription() }}</p>
+        </div>
+    </div>
+{% endblock %}

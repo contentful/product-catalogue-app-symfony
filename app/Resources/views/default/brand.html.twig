@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="wrapper">
+        <div id="container">
+            <h1>{{ brand.getCompanyName() }}</h1>
+            <p>{{ brand.getCompanyDescription() }}</p>
+            <p><a href="{{ brand.getWebsite() }}">Website</a></p>
+            <img src="{{ brand.getLogo().getFile().getUrl() }}" alt=""/>
+            <p>{{ brand.getTwitter() }}</p>
+            <p>{{ brand.getEmail() }}</p>
+            <p>{{ brand.getPhone() }}</p>
+        </div>
+    </div>
+{% endblock %}

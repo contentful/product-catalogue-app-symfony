@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="wrapper">
+        <div id="container">
+            <h1>{{ product.getProductName() }}</h1>
+            <p>{{ product.getProductDescription() }}</p>
+            <ul>
+            {% for category in product.getCategories() %}
+                <li><a href="{{ url("category", {'id': category.getId()}) }}">{{ category.getTitle() }}</a></li>
+            {% endfor %}
+            </ul>
+            <p>{{ product.getSizetypecolor() }}</p>
+            {% for image in product.getImage() %}
+                <img src="{{ image.getFile().getUrl() }}" alt=""/>
+            {% endfor %}
+            <p>{{ product.getTags()|join(', ') }}</p>
+            <p>{{ product.getPrice() }} €</p>
+            <p><a href="{{ url("brand", {'id': product.getBrand().getId()}) }}">{{ product.getBrand().getCompanyName() }}</a></p>
+            <p>{{ product.getQuantity() }}</p>
+            <p>{{ product.getSku() }}</p>
+            <p><a href="{{ product.getWebsite() }}">Website</a></p>
+        </div>
+    </div>
+{% endblock %}
