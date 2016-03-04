@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="list-group">
+                {% for brand in brands %}
+                    <a href="{{ url("brand.item", {'id': brand.getId()}) }}" class="list-group-item">
+                        <div class="media-left media-middle">
+                            <img class="media-object" src="{{ brand.getLogo().getFile().getUrl() }}?h=64&w=64&fit=pad" alt="">
+                        </div>
+
+                        <div class="media-body">
+                            <h4 class="media-heading">{{ brand.getCompanyName() }}</h4>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

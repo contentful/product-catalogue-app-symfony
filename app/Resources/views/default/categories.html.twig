@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="list-group">
+                {% for category in categories %}
+                    <a href="{{ url("category.item", {'id': category.getId()}) }}" class="list-group-item">
+                        <div class="media-left media-middle">
+                            <img class="media-object" src="{{ category.getIcon().getFile().getUrl() }}?h=64&w=64&fit=pad" alt="">
+                        </div>
+
+                        <div class="media-body">
+                            <h4 class="media-heading">{{ category.getTitle() }}</h4>
+                            {{ category.getCategoryDescription() }}
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

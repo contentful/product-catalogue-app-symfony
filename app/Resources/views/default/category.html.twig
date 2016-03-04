@@ -1,10 +1,25 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div id="wrapper">
-        <div id="container">
-            <h1>{{ category.getTitle() }}</h1>
-            <p>{{ category.getCategoryDescription() }}</p>
+    <h3>{{ category.getTitle() }}</h3>
+    <p>{{ category.getCategoryDescription() }}</p>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="list-group">
+                {% for product in products %}
+                    <a href="{{ url("product.item", {'id': product.getId()}) }}" class="list-group-item">
+                        <div class="media">
+                            <div class="media-left media-middle">
+                                <img class="media-object" src="{{ product.getImage()[0].getFile().getUrl() }}?h=64&w=64&fit=pad" alt="" />
+                            </div>
+                            <div class="media-body media-middle">
+                                <h4 class="media-heading">{{product.getProductName()}} <span class="label label-info">{{ product.getPrice() }} €</span></h4>
+                            </div>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
         </div>
     </div>
 {% endblock %}

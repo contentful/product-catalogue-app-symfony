@@ -1,15 +1,38 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div id="wrapper">
-        <div id="container">
-            <h1>{{ brand.getCompanyName() }}</h1>
-            <p>{{ brand.getCompanyDescription() }}</p>
-            <p><a href="{{ brand.getWebsite() }}">Website</a></p>
-            <img src="{{ brand.getLogo().getFile().getUrl() }}" alt=""/>
-            <p>{{ brand.getTwitter() }}</p>
-            <p>{{ brand.getEmail() }}</p>
-            <p>{{ brand.getPhone() }}</p>
+    <h3>{{ brand.getCompanyName() }} <img src="{{ brand.getLogo().getFile().getUrl() }}?h=64&w=64&fit=pad" alt=""/></h3>
+
+    <p>{{ brand.getCompanyDescription() }}</p>
+
+    <p>
+        <a href="{{ brand.getWebsite() }}" class="btn btn-info">View on the web</a>
+    </p>
+
+    <dl>
+        <dt>Twitter</dt>
+        <dd>{{ brand.getTwitter() }}</dd>
+
+        <dt>E-Mail</dt>
+        <dd>{{ brand.getEmail() }}</dd>
+    </dl>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="list-group">
+                {% for product in products %}
+                    <a href="{{ url("product.item", {'id': product.getId()}) }}" class="list-group-item">
+                        <div class="media">
+                            <div class="media-left media-middle">
+                                <img class="media-object" src="{{ product.getImage()[0].getFile().getUrl() }}?h=64&w=64&fit=pad" alt="" />
+                            </div>
+                            <div class="media-body media-middle">
+                                <h4 class="media-heading">{{product.getProductName()}} <span class="label label-info">{{ product.getPrice() }} €</span></h4>
+                            </div>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
         </div>
     </div>
 {% endblock %}
