@@ -13,13 +13,17 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class DefaultController extends Controller
 {
+    const CT_PRODUCT = '2PqfXUJwE8qSYKuM0U6w8M';
+    const CT_CATEGORY = '6XwpTaSiiI2Ak2Ww0oi6qa';
+    const CT_BRAND = 'sFzTZbSuM8coEwygeUYes';
+
     /**
-     * @Route("/", name="homepage")
+     * @Route("/", name="product")
      */
     public function indexAction()
     {
         $client = $this->get('contentful.delivery');
-        $query = (new Query())->setContentType('2PqfXUJwE8qSYKuM0U6w8M');
+        $query = (new Query())->setContentType(self::CT_PRODUCT);
         $products = $client->getEntries($query);
 
         return $this->render('default/index.html.twig', [
@@ -28,7 +32,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/product/{id}", name="product")
+     * @Route("/product/{id}", name="product.item")
      */
     public function productAction($id)
     {
@@ -39,7 +43,7 @@ class DefaultController extends Controller
             throw new NotFoundHttpException;
         }
 
-        if ($product->getContentType()->getId() !== '2PqfXUJwE8qSYKuM0U6w8M') {
+        if ($product->getContentType()->getId() !== self::CT_PRODUCT) {
             throw new NotFoundHttpException;
         }
 
@@ -49,7 +53,21 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/category/{id}", name="category")
+     * @Route("/category", name="category")
+     */
+    public function categoriesAction()
+    {
+        $client = $this->get('contentful.delivery');
+        $query = (new Query())->setContentType(self::CT_CATEGORY);
+        $categories = $client->getEntries($query);
+
+        return $this->render('default/categories.html.twig', [
+            'categories' => $categories
+        ]);
+    }
+
+    /**
+     * @Route("/category/{id}", name="category.item")
      */
     public function categoryAction($id)
     {
@@ -60,17 +78,37 @@ class DefaultController extends Controller
             throw new NotFoundHttpException;
         }
 
-        if ($category->getContentType()->getId() !== '6XwpTaSiiI2Ak2Ww0oi6qa') {
+        if ($category->getContentType()->getId() !== self::CT_CATEGORY) {
             throw new NotFoundHttpException;
         }
 
+        $query = (new Query())
+            ->setContentType(self::CT_PRODUCT)
+            ->where('fields.categories.sys.id', $id);
+        $products = $client->getEntries($query);
+
         return $this->render('default/category.html.twig', [
-            'category' => $category
+            'category' => $category,
+            'products' => $products
         ]);
     }
 
     /**
-     * @Route("/brand/{id}", name="brand")
+     * @Route("/brand", name="brand")
+     */
+    public function brandsAction()
+    {
+        $client = $this->get('contentful.delivery');
+        $query = (new Query())->setContentType(self::CT_BRAND);
+        $brands = $client->getEntries($query);
+
+        return $this->render('default/brands.html.twig', [
+            'brands' => $brands
+        ]);
+    }
+
+    /**
+     * @Route("/brand/{id}", name="brand.item")
      */
     public function brandAction($id)
     {
@@ -81,12 +119,18 @@ class DefaultController extends Controller
             throw new NotFoundHttpException;
         }
 
-        if ($brand->getContentType()->getId() !== 'sFzTZbSuM8coEwygeUYes') {
+        if ($brand->getContentType()->getId() !== self::CT_BRAND) {
             throw new NotFoundHttpException;
         }
 
+        $query = (new Query())
+            ->setContentType(self::CT_PRODUCT)
+            ->where('fields.brand.sys.id', $id);
+        $products = $client->getEntries($query);
+
         return $this->render('default/brand.html.twig', [
-            'brand' => $brand
+            'brand' => $brand,
+            'products' => $products
         ]);
     }
 }
