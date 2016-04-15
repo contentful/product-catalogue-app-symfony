@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ca70a30958ef678696f297385e064683",
-    "content-hash": "b56639503e38c99850b1215929148a83",
+    "hash": "39842727c1e937a9ced7421b1c07fd3a",
+    "content-hash": "d6fb2539c8876b06ece3d97e1b8109b4",
     "packages": [
         {
             "name": "contentful/contentful",
@@ -52,16 +52,16 @@
         },
         {
             "name": "contentful/contentful-bundle",
-            "version": "0.6.0-beta",
+            "version": "0.6.1-beta",
             "source": {
                 "type": "git",
                 "url": "https://github.com/contentful/ContentfulBundle.git",
-                "reference": "ac8a37343cc4e79a6dc2a511d6c830e3a6e778af"
+                "reference": "faaf301502bb905ed4f71ff0b9d85901a8d0991b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/contentful/ContentfulBundle/zipball/ac8a37343cc4e79a6dc2a511d6c830e3a6e778af",
-                "reference": "ac8a37343cc4e79a6dc2a511d6c830e3a6e778af",
+                "url": "https://api.github.com/repos/contentful/ContentfulBundle/zipball/faaf301502bb905ed4f71ff0b9d85901a8d0991b",
+                "reference": "faaf301502bb905ed4f71ff0b9d85901a8d0991b",
                 "shasum": ""
             },
             "require": {
@@ -97,7 +97,7 @@
                 "contentful",
                 "sdk"
             ],
-            "time": "2016-03-03 15:18:35"
+            "time": "2016-04-14 13:56:52"
         },
         {
             "name": "doctrine/annotations",
