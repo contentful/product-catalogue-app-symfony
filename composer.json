@@ -25,7 +25,7 @@
         "sensio/framework-extra-bundle": "^3.0.2",
         "incenteev/composer-parameter-handler": "^2.0",
         "contentful/contentful-bundle": "~0.6.1@beta",
-        "contentful/contentful": "~0.6.4@beta"
+        "contentful/contentful": "~0.6.5@beta"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
