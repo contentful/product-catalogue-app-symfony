@@ -4,39 +4,39 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "b13c8ceced0370a4da7bde0550178b18",
+    "content-hash": "c27012431ed25901f1afdeb504618505",
     "packages": [
         {
             "name": "contentful/contentful",
-            "version": "0.6.5-beta",
+            "version": "0.8.1-beta",
             "source": {
                 "type": "git",
                 "url": "https://github.com/contentful/contentful.php.git",
-                "reference": "c9206efb5e532fa28c4474188f925ebd6e98951c"
+                "reference": "75cb5264f87cf00dae0b1e20346219fcbb45fc67"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/contentful/contentful.php/zipball/c9206efb5e532fa28c4474188f925ebd6e98951c",
-                "reference": "c9206efb5e532fa28c4474188f925ebd6e98951c",
+                "url": "https://api.github.com/repos/contentful/contentful.php/zipball/75cb5264f87cf00dae0b1e20346219fcbb45fc67",
+                "reference": "75cb5264f87cf00dae0b1e20346219fcbb45fc67",
                 "shasum": ""
             },
             "require": {
                 "guzzlehttp/guzzle": "^6.2.1",
                 "guzzlehttp/psr7": "~1.1",
-                "php": ">=5.5.9",
+                "php": "^5.5.9|^7.0",
                 "psr/http-message": "~1.0",
-                "symfony/console": "~2.7|~3.0"
+                "symfony/console": "~2.7|~3.0",
+                "symfony/filesystem": "~2.7|~3.0"
             },
             "require-dev": {
                 "jakub-onderka/php-console-highlighter": "^0.3.2",
                 "jakub-onderka/php-parallel-lint": "^0.9.2",
-                "php-vcr/phpunit-testlistener-vcr": "^1.1",
-                "phpunit/phpunit": "~4.0"
+                "php-vcr/phpunit-testlistener-vcr": "^1.1"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.7-dev"
+                    "dev-master": "0.9.0-dev"
                 }
             },
             "autoload": {
@@ -49,24 +49,24 @@
                 "MIT"
             ],
             "description": "SDK for the Contentful Content Delivery API",
-            "time": "2016-09-10T23:11:16+00:00"
+            "time": "2017-04-11T15:13:09+00:00"
         },
         {
             "name": "contentful/contentful-bundle",
-            "version": "0.6.2-beta",
+            "version": "0.8.0-beta",
             "source": {
                 "type": "git",
                 "url": "https://github.com/contentful/ContentfulBundle.git",
-                "reference": "959fbce57bc38e9c4360f1fb9e95f5866c9cb57e"
+                "reference": "5a9a564722f695d95c2a931a86a0f0217d230daa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/contentful/ContentfulBundle/zipball/959fbce57bc38e9c4360f1fb9e95f5866c9cb57e",
-                "reference": "959fbce57bc38e9c4360f1fb9e95f5866c9cb57e",
+                "url": "https://api.github.com/repos/contentful/ContentfulBundle/zipball/5a9a564722f695d95c2a931a86a0f0217d230daa",
+                "reference": "5a9a564722f695d95c2a931a86a0f0217d230daa",
                 "shasum": ""
             },
             "require": {
-                "contentful/contentful": "~0.6.4@beta",
+                "contentful/contentful": "~0.8@beta",
                 "php": ">=5.5.9",
                 "symfony/framework-bundle": "~2.7|~3.0"
             },
@@ -99,7 +99,7 @@
                 "contentful",
                 "sdk"
             ],
-            "time": "2017-04-05T11:43:49+00:00"
+            "time": "2017-04-11T15:28:22+00:00"
         },
         {
             "name": "doctrine/annotations",

@@ -42,3 +42,4 @@ contentful:
   delivery:
     space: rue07lqzt1co
     token: 2e32b11f319d4d2f7c7582d9f088ad1e67ff594a08d3c084d56204dbb4cf8746
+    cache: true
