@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "c27012431ed25901f1afdeb504618505",
+    "content-hash": "dc8cd01bae22c8de06b65971d0a47826",
     "packages": [
         {
             "name": "contentful/contentful",
-            "version": "0.8.1-beta",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/contentful/contentful.php.git",
-                "reference": "75cb5264f87cf00dae0b1e20346219fcbb45fc67"
+                "reference": "71870680c48bbfd69b0f60e7ab50a4a1ba25c828"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/contentful/contentful.php/zipball/75cb5264f87cf00dae0b1e20346219fcbb45fc67",
-                "reference": "75cb5264f87cf00dae0b1e20346219fcbb45fc67",
+                "url": "https://api.github.com/repos/contentful/contentful.php/zipball/71870680c48bbfd69b0f60e7ab50a4a1ba25c828",
+                "reference": "71870680c48bbfd69b0f60e7ab50a4a1ba25c828",
                 "shasum": ""
             },
             "require": {
@@ -49,24 +49,24 @@
                 "MIT"
             ],
             "description": "SDK for the Contentful Content Delivery API",
-            "time": "2017-04-11T15:13:09+00:00"
+            "time": "2017-04-26T13:11:44+00:00"
         },
         {
             "name": "contentful/contentful-bundle",
-            "version": "0.8.0-beta",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/contentful/ContentfulBundle.git",
-                "reference": "5a9a564722f695d95c2a931a86a0f0217d230daa"
+                "reference": "1d71d082c2342324498a04bedf99f29c6b11fe9a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/contentful/ContentfulBundle/zipball/5a9a564722f695d95c2a931a86a0f0217d230daa",
-                "reference": "5a9a564722f695d95c2a931a86a0f0217d230daa",
+                "url": "https://api.github.com/repos/contentful/ContentfulBundle/zipball/1d71d082c2342324498a04bedf99f29c6b11fe9a",
+                "reference": "1d71d082c2342324498a04bedf99f29c6b11fe9a",
                 "shasum": ""
             },
             "require": {
-                "contentful/contentful": "~0.8@beta",
+                "contentful/contentful": "~1.0",
                 "php": ">=5.5.9",
                 "symfony/framework-bundle": "~2.7|~3.0"
             },
@@ -77,7 +77,7 @@
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.7-dev"
+                    "dev-master": "0.9-dev"
                 }
             },
             "autoload": {
@@ -99,7 +99,7 @@
                 "contentful",
                 "sdk"
             ],
-            "time": "2017-04-11T15:28:22+00:00"
+            "time": "2017-04-26T14:00:47+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -2070,10 +2070,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "contentful/contentful-bundle": 10,
-        "contentful/contentful": 10
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
